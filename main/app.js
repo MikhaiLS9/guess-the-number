@@ -4,7 +4,7 @@ function randomInteger(min, max) {
 function game() {
   let randomNumber = randomInteger(1, 100);
   function guessNumber() {
-    let userNumber = +prompt("Угадай число от 1 до 100");
+    let userNumber = prompt("Угадай число от 1 до 100");
     if (userNumber === null) {
       alert("Игра окончена");
       return;
@@ -15,7 +15,8 @@ function game() {
       guessNumber();
       return;
     }
-
+    userNumber = Number(userNumber)
+    
     if (userNumber > randomNumber) {
       alert(`Загаданное число меньше`);
       guessNumber();
